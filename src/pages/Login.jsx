@@ -69,8 +69,9 @@ const Login = () => {
 	return(
         <>
         	<section>
+           
         	 <div className="registration_section">
-                 <div className="registration_container">
+            <div className="registration_container">
         	 <h3 style={{textAlign : "center"}}>Login</h3>
         	 <div className="registration">
         	  <div className="regis_img_container">

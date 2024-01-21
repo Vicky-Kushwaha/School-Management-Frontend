@@ -5,11 +5,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import {useAuth} from "./Context";
 import {Link} from "react-router-dom"
 import {useState,useEffect} from "react"
+import LoadingBar from 'react-top-loading-bar';
 
 const Navbar = () => {
 
 
-const {sidebar,showSidebar,hideSidebar,user,stud,teac,isLoggedIn,userAuthentication} = useAuth();
+const {sidebar,showSidebar,hideSidebar,user,isLoggedIn,userAuthentication,progress} = useAuth();
 const[noticeModal,setNoticeModal] = useState(false); 
 const[notice,setNotice] = useState({
      noticedata:"",
@@ -67,6 +68,7 @@ const onChange = (e) => {
 	return(
           <>
            <div className="nav_container">
+            <LoadingBar color='red' progress={progress} />
            	<div className="logo_container">
               {(isLoggedIn) &&
                (<KeyboardDoubleArrowRightIcon style={{cursor:"pointer"}} onClick={showSidebar} />)
