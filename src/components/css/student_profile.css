@@ -1,0 +1,43 @@
+
+/*teacher profile and admin profile have same css*/
+
+.student_profile_container{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	min-height: calc(100vh - 3.8rem - 3rem);
+}
+
+.student_profile{
+	margin: 2rem;
+	width: 65vw;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+	border-radius: 10px;
+	padding: 0.5rem;
+}
+
+.profile_img{
+	text-align: center;
+}
+
+.student_data{
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 0.8rem;
+}
+
+.student_data div{
+  width: 15rem;
+  margin: 0.5rem
+}
+
+.profile_img{
+	margin: 0!important; 
+}
+
+
+.student_profile span{
+	margin-right: 0.5rem;
+	color: brown;
+}

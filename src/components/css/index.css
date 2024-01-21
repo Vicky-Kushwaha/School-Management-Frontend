@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,300&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+h3{
+   font-family: 'Ubuntu', sans-serif;
+   text-transform: capitalize;
+   word-spacing: 0.3rem;
+   font-size: 1.4rem;
+}
+
+a{
+ font-family: 'Ubuntu', sans-serif;
+}
+
+p{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+section{
+  margin-top: 3.8rem;
+  min-height: calc(100vh - 3.8rem - 3rem);
+}

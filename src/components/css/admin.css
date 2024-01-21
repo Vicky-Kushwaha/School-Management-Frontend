@@ -1,0 +1,52 @@
+
+
+.admin_access{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.total_info{
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+	padding: 1.2rem;
+	border-radius: 10px;
+	background-color: lightgreen;
+  text-align: center;
+  width: 20rem;
+  margin: 1rem;
+}
+
+.total_info p{
+   font-size: 4rem;
+   font-weight: 600;
+   padding: 0.5rem;
+   color: blue;
+}
+
+.sidebar{
+   position: absolute;
+   top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  min-height: 100vh;
+  width: 10rem;
+  padding-top: 1rem;
+}
+
+.hidesidebar{
+   color:white;
+   text-align: right;
+   padding: 0.5rem;
+   cursor: pointer;
+}
+
+.sidebar_link{
+   text-align: center;
+   padding: 0.5rem;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+
+}

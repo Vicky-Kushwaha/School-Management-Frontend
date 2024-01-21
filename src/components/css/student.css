@@ -1,0 +1,170 @@
+
+
+.info_box{
+	padding: 0.5rem;
+}
+
+.search_box{
+	text-align: center;
+	margin: 0.5rem;
+}
+
+.search_box input{
+	width: 30rem;
+	font-size: 1.2rem;
+	padding: 0.5rem;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, 1.0);
+}
+
+.student_box{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+	width: 75vw;
+	height: 60vh;
+	border-radius: 10px;
+	margin: 0 auto;
+	padding: 1rem;
+	overflow: auto;
+}
+
+.student_box::-webkit-scrollbar{
+	display: none;
+}
+
+.student_info{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+	border-radius: 10px;
+	width: 70vw;
+	margin: 1rem auto;
+}
+
+.student_info table{
+	width: 100%;
+	text-align: center;
+}
+
+td,th{
+	padding: 0.5rem;
+	border-spacing: none;
+	text-transform: capitalize;
+}
+
+.table_heading{
+	background-color: gray;
+}
+
+th:nth-child(1){
+	border-top-left-radius: 10px;
+}
+
+th:nth-child(5){
+	border-top-right-radius: 10px;
+}
+
+.add_student{
+	width: 15rem;
+	padding: 0.6rem;
+	font-size: 1.2rem;
+	border:none;
+	background-color: blueviolet;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+
+}
+
+.modal{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.cutIcon{
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+	border-radius: 50%;
+}
+
+.cutIcon:hover {
+	background-color: red;
+	color: white;
+	cursor: pointer;
+}
+
+.form_container{
+	position: relative;
+	width: 40rem;
+	background-color: white;
+	padding: 0.5rem;
+	border-radius: 10px;
+}
+
+.student_input{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.student_input input{
+	width: 15rem;
+	padding: 0.3rem;
+	border-radius: 5px;
+	border:none;
+	outline:none;
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, 1.0);
+	font-size: 1rem;
+}
+
+.student_input div{
+	display: flex;
+	margin: 0.5rem 2rem;
+	flex-direction: column;
+}
+
+.heading_container{
+	display: flex;
+	justify-content: center;
+	margin: 0.5rem;	
+}
+
+.submit_container{
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.submit_container input[type="submit"]{
+	width: 8rem;
+}
+
+.action{
+	display: flex;
+	justify-content: space-around;
+    padding: 0.3rem;
+	border-radius: 0 0 10px 10px ;
+}
+
+.action div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	cursor: pointer;
+
+}
+
+.action span{
+   font-weight: 800;
+   font-size: 1.3rem;
+}

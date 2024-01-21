@@ -1,0 +1,51 @@
+
+.notice_container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.notice_box{
+   width: 65vw;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+   height: 15rem;
+   overflow: auto;
+   margin: 1rem;
+   border-radius: 10px;
+   overflow: auto;
+}
+
+.notice_box::-webkit-scrollbar{
+   display: none;
+}
+
+.notice_heading{
+ padding: 0.6rem;
+ background-color: gray;
+ border-radius: 10px 10px 0px 0px ;
+}
+
+.notice{
+	padding: 0.5rem;
+}
+
+.noticeData{
+	display: flex;
+    justify-content: space-between;
+}
+
+.noticeDelete{
+  color: white;
+}
+
+.noticeData:hover .noticeDelete{
+    color: red;
+    cursor: pointer;
+
+}
+
+.notice li {
+	padding: 0.3rem;
+	cursor: pointer;
+}
