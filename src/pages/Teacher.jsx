@@ -7,6 +7,7 @@ import {useAuth} from "../components/Context";
 import {useState,useEffect} from "react";
 import { toast } from 'react-toastify';
 import {useNavigate} from "react-router-dom";
+import LoadingBar from 'react-top-loading-bar';
 
 const Teacher = () => {
 
@@ -22,7 +23,7 @@ const Teacher = () => {
      }
   },[loading]);
 
-
+ const [progress, setProgress] = useState(0);
  const[modal,setModal] = useState(false);
  const[teacherModal,setTeacherModal] = useState(false);
  const[editModal,setEditModal] = useState(false);
@@ -104,6 +105,7 @@ const Teacher = () => {
 
  const handleSubmit = async(e) => {
      e.preventDefault();
+     setProgress(20);
     try{
       if(modal){
     const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/teacher`,{
@@ -115,7 +117,7 @@ const Teacher = () => {
     });
 
     const res_data = await response.json();
-
+     setProgress(40);
     if(response.ok){
 
     toast.success(res_data.message);
@@ -131,6 +133,7 @@ const Teacher = () => {
      });
 
       setModal(false);
+      setProgress(80);
       userAuthentication();
    }else{
      toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message );
@@ -148,14 +151,17 @@ const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/teacher/
     });
 
   const res_data = await response.json();
+   setProgress(40); 
 
     if(response.ok){
       toast.success(res_data.message);    
       setEditModal(false);
+      setProgress(80);
       userAuthentication();
       }
    }
 
+    setProgress(100);
     }catch(err){
         console.log(err);
     }
@@ -185,6 +191,7 @@ const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/teacher/
 	return(
          <>
          	<section>
+            <LoadingBar color='red' progress={progress} />
          	 <div className="student_container">
          	  <div className="info_box">
          	  <div className="search_box">

@@ -3,17 +3,20 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../components/Context";
 import { toast } from 'react-toastify';
+import LoadingBar from 'react-top-loading-bar';
 
 
 const Login = () => {
 
  const {storetoken} = useAuth();
 
+ const [progress, setProgress] = useState(0);
  const[loginValue,setLoginValue,userAuthentication] = useState({
     email:"",
     category:"",
     password:""
  });
+
 
  const navigate = useNavigate();    
 
@@ -26,7 +29,7 @@ const Login = () => {
 
  const handleSubmit = async(e) => {
      e.preventDefault(); 
-
+      setProgress(20);
    try{
     const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/login`,{
         method: "POST",
@@ -35,7 +38,7 @@ const Login = () => {
         },
         body: JSON.stringify(loginValue)
     });
-
+      setProgress(40);
     const res_data = await response.json();
 
     if(response.ok){
@@ -55,10 +58,14 @@ const Login = () => {
      } if(loginValue.category === "teacher"){
      navigate("/teacher_profile"); 
      }
+     
+    setProgress(80); 
+
     }else{
       toast.error(res_data.message || "Login failed");
     }
 
+    setProgress(100);
 
    }catch(err){
       console.log(err);
@@ -69,7 +76,7 @@ const Login = () => {
 	return(
         <>
         	<section>
-           
+           <LoadingBar color='red' progress={progress} />
         	 <div className="registration_section">
             <div className="registration_container">
         	 <h3 style={{textAlign : "center"}}>Login</h3>

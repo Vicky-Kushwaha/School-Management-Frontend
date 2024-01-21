@@ -3,6 +3,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../components/Context";
 import { toast } from 'react-toastify';
+import LoadingBar from 'react-top-loading-bar';
 
 
 const Registration = () => {
@@ -10,6 +11,7 @@ const Registration = () => {
  const navigate = useNavigate();
 const {storetoken} = useAuth();   
 
+ const [progress, setProgress] = useState(0);
  const[regValue,setRegValue] = useState({
     name:"",
     phone:"",
@@ -27,6 +29,7 @@ const {storetoken} = useAuth();
 
  const handleSubmit = async(e) => {
      e.preventDefault();
+     setProgress(20);
     try{
 
     const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/register`,{
@@ -37,7 +40,7 @@ const {storetoken} = useAuth();
         body: JSON.stringify(regValue)
     });
     const res_data = await response.json();
-
+     setProgress(40);
     if(response.ok){
 
     storetoken(res_data.token);
@@ -51,11 +54,12 @@ const {storetoken} = useAuth();
         });
 
        toast.success(res_data.message);
+       setProgress(80);
        navigate("/admin");
     }else{
         toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message );
     }
-
+     setProgress(100);
     }catch(err){
         console.log(err);
     }
@@ -65,6 +69,7 @@ const {storetoken} = useAuth();
 	return(
         <>
         	<section>
+            <LoadingBar color='red' progress={progress} />
         	 <div className="registration_section">
                  <div className="registration_container">
         	 <h3 style={{textAlign : "center"}}>Registration</h3>

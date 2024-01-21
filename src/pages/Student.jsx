@@ -7,10 +7,12 @@ import {useState,useEffect} from "react";
 import {useAuth} from "../components/Context";
 import { toast } from 'react-toastify';
 import {useNavigate} from "react-router-dom";
+import LoadingBar from 'react-top-loading-bar';
 
 const Student = () => {
    
  const {user,stud,userAuthentication,loading} = useAuth();
+  const [progress, setProgress] = useState(0);
 
  const navigate = useNavigate();
 
@@ -126,7 +128,7 @@ const attendaneChange = (e) => {
 
  const handleSubmit = async(e) => {
      e.preventDefault();
-
+     setProgress(20);
     try{
      if(modal){
     const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/student`,{
@@ -138,7 +140,7 @@ const attendaneChange = (e) => {
     }); 
 
     const res_data = await response.json();
-
+     setProgress(40);
     if(response.ok){
      setStuData({
         name:"",
@@ -156,6 +158,7 @@ const attendaneChange = (e) => {
       toast.success(res_data.message);
       userAuthentication();
       setModal(false);
+      setProgress(80);
         }else{
             toast.error(res_data.extraDetails ? res_data.extraDetails: res_data.message);
           }
@@ -172,7 +175,7 @@ const attendaneChange = (e) => {
     });
  
     const res_data = await response.json();
-
+     setProgress(40);
     if(response.ok){
     setStuData({
        name:"",
@@ -190,6 +193,7 @@ const attendaneChange = (e) => {
       toast.success(res_data.message);
       userAuthentication();
       setEditModal(false);
+      setProgress(80);
         }else{
             toast.error(res_data.extraDetails);
         }
@@ -204,15 +208,18 @@ const attendaneChange = (e) => {
     });
  
     const res_data = await response.json();
-
+     setProgress(40);
     if(response.ok){
        setAttendance(null);
        userAuthentication();
       setAttendanceModal(false);
+      setProgress(80);
         }
    }else if(!attendance){
      toast.error("Please select attendance type");
-   }       
+   }  
+
+   setProgress(100);     
 
   }catch(err){
         console.log(err);
@@ -247,6 +254,7 @@ const attendaneChange = (e) => {
 	return(
          <>
          	<section>
+            <LoadingBar color='red' progress={progress} />
          	 <div className="student_container">
          	  <div className="info_box">
          	  <div className="search_box">

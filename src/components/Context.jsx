@@ -40,14 +40,14 @@ export const AuthProvider = ({children}) => {
  
  const userAuthentication = async() => {
    try{
-    setProgress(30);
+    setProgress(20);
     const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/user`,{
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
       }
     });
-     setProgress(50);
+     setProgress(40);
     if(response.ok){
       const data = await response.json();
   

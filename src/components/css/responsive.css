@@ -8,7 +8,7 @@
 }
 
 .logo_container h3{
-  font-size: 1.2rem;
+  font-size: 1.4rem!important;
 }
 
 .home_container{
@@ -41,6 +41,10 @@
 
 .form_container{
 	width: 18rem!important;
+}
+
+.student_input div{
+		margin: 0rem 2rem!important;
 }
 
 .student_input input{
