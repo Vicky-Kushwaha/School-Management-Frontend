@@ -261,37 +261,37 @@ const attendaneChange = (e) => {
          	  	 <input type="number" name="search" max="12" placeholder="search student by class" onChange={filter}/>
          	  </div>
          	  <div className="student_box">
+              
                {Array.isArray(filterStudent) && filterStudent.length > 0 ? (
-                   filterStudent.map((elem, id) => (
-         	  	  <div className="student_info" key={id} >
-         	  	 	<table cellSpacing="0">
+                    <table cellSpacing="0">
                   <thead>
-         	  	 		<tr className="table_heading">
-         	  	 			<th>Name</th>
-         	  	 			<th>Class</th>
-         	  	 			<th>Roll</th>
-         	  	 			<th>Father's name</th>
-         	  	 			<th>Mother's name</th>
-         	  	 		</tr>
-                     </thead>
-                     <tbody>
+                        <tr className="table_heading">
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Roll</th>
+                            <th>Father's name</th>
+                            <th>Mother's name</th>
+                            <th>Actions</th>
+                        </tr>
+                     </thead>                
+                  { filterStudent.map((elem, id) => (
+                     <tbody className="student_info" key={id}>
          	  	 		<tr className="table_data">
          	  	 			<td>{elem.name}</td>
          	  	 			<td>{elem.classname}</td>
          	  	 			<td>{elem.roll}</td>
          	  	 			<td>{elem.father}</td>
          	  	 			<td>{elem.mother}</td>
-         	  	 		</tr> 
-                     </tbody>      	  	 		
-         	  	 	</table>
-                     <div className="action">
+         	  	 		<td className="action">
                         <div onClick={() => attendModal(elem)} ><span>A</span></div>
-                           <div><VisibilityIcon onClick={()=>studModal(elem)} /></div>
+                        <div><VisibilityIcon onClick={()=>studModal(elem)} /></div>
                         <div><EditIcon onClick={() => editShow(elem)} /></div>
                         <div><DeleteIcon onClick={() => del(elem)}  /></div>
-                     </div> 
-         	  	     </div>   
-                     ))
+                        </td>
+                     </tr>          	  	   
+                   </tbody>                     
+                     )) }
+                    </table>  
                        ) : (
                                <p style={{textAlign:"center"}}>No students available</p>
                              )}
@@ -408,8 +408,11 @@ const attendaneChange = (e) => {
                <div>   
                   <p><span>Email:</span> {selectedStudent.email}</p>
                </div>
+               <div>   
+                  <p><span>Phone:</span> {selectedStudent.phone}</p>
+               </div>
                <div>
-                  <p><span>Fee:</span> {selectedStudent.fee}</p>
+                  <p><span>Dues:</span> {selectedStudent.fee}</p>
                </div>
                <div>  
                   <p><span>Attendance:</span> {selectedStudent.present}/{selectedStudent.present+selectedStudent.absent}</p>

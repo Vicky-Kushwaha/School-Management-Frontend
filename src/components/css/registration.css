@@ -35,13 +35,7 @@
 	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
 }
 
-input[type="submit"]{
-	background-color: blue;
-	border: none;
-	border-radius: 5px;
-	padding: 0.4rem;
-	font-size: 0.8rem;
-	color: white;
-	cursor: pointer;
-	font-weight: 600;
+.regis_form p{
+	 padding-top:1rem;
+	 font-size:0.8rem;
 }

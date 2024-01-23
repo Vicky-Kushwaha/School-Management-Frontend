@@ -85,6 +85,12 @@ const onChange = (e) => {
               <KeyboardDoubleArrowLeftIcon onClick={hideSidebar}/>
            </div> 
 
+         { (user.category === "teacher") && 
+           <div className="sidebar_link">
+              <Link className="link" to="/teacher_profile" onClick={hideSidebar} >Profile</Link>
+           </div>
+         }  
+
            { (user.category === "admin" || user.category === "teacher")  && 
              <> 
            {  (user.category === "admin" ) &&
@@ -94,23 +100,29 @@ const onChange = (e) => {
            </div>
            <div className="sidebar_link">
               <Link className="link" to="/admin_profile" onClick={hideSidebar} >Profile</Link>
-           </div>             </> }          
+           </div>             </> } 
+
            <div className="sidebar_link">
               <Link className="link" to="/student" onClick={hideSidebar} >Student</Link>
            </div>
+
            { (user.category === "admin") && (
+            <>
            <div className="sidebar_link">
               <Link className="link" to="/teacher" onClick={hideSidebar} >Teacher</Link>
-           </div>) }
-           {  (user.category === "admin" ) && 
+           </div>
            <div className="sidebar_link">
               <Link className="link" onClick={noticeModalShow}>Notice</Link>
-           </div>  }
+           </div> </> )}
+
                  </>}
         
            <div className="sidebar_link">
               <Link className="link" to="/logout" onClick={hideSidebar} >Logout</Link>
-           </div>                                                                   
+           </div> 
+
+
+
          </div> } 
 
 

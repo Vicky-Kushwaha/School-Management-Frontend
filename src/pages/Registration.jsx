@@ -102,7 +102,7 @@ const {storetoken} = useAuth();
         	  	<div className="submit_container">
         	  	<input type="submit" value="Register"/>
         	  	</div> 
-             <p style={{paddingTop:"1rem",fontSize:"0.8rem"}}>Already have account ? 
+             <p>Already have account ? 
              <span onClick={()=> navigate("/login")} style={{color:"blue",cursor:"pointer"}} >  signIn</span></p>                
         	  	</form>
         	  </div>

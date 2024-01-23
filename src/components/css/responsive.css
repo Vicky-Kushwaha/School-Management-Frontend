@@ -1,42 +1,64 @@
 
 @media only screen and (max-width: 520px) {
 
+
 .logo_container img{
 	width: 40px;
 	height: 30px;
-	margin: 0rem 0.5rem;
+	margin: 0rem;
 }
 
 .logo_container h3{
-  font-size: 1.4rem!important;
+  font-size: 1.2rem!important;
 }
 
 .home_container{
-	padding: 1rem!important;
+	padding: 0.5rem!important;
 }
 
 .image_container img{
-	width: 340px;
+	width: 300px;
+	height: 230px;
 }
 
 .home_about h3{
-	margin-top: 4rem;
+	margin-top: 1rem;
 	font-size: 1.5rem!important;
 }
 
 .registration_container{
 	width: 20rem;
 	padding: 0.5rem;
-	margin: 4.5rem 0.2rem;
+	margin: 1rem 0.2rem;
 }
 
 .regis_img_container img{
 	width: 280px!important;
-	height: 250px;
+	height: 220px;
 }
+
+.input_container{
+	margin: 0.3rem!important;
+	flex-direction: row!important;
+	justify-content: space-between;
+}
+
+.input_container input{
+	width: 12rem!important;
+
+}
+
+.regis_form p{
+	 padding-top: 0.2rem!important;
+	}
 
 .total_info{
   width: 18rem!important;
+  padding: 0.3rem!important;
+}
+
+.total_info p{
+   font-size: 3rem!important;
 }
 
 .form_container{
@@ -63,12 +85,14 @@
 
 .notice_box{
    width: 18rem!important;
+   height: 12rem!important;
+   margin: 0.5rem!important;
 }
 
 
 
 .search_box{
-	margin-top: 2rem!important;
+	margin-top: 0rem!important;
 }
 
 .search_box input{
@@ -76,9 +100,10 @@
 }
 
 .student_box{
-	width: 18rem!important;
-	height: 30rem!important;
-	margin: 3rem auto!important;
+	width: 21rem!important;
+	height: 26rem!important;
+	margin: 1rem auto!important;
+	padding: 0.5rem!important;
 }
 
 
@@ -95,6 +120,20 @@
 .notice_input input{
 	width: 14rem!important;
   }
+
+.student_profile{
+	margin: 0.5rem!important;
+} 
+
+.profile_img img{
+	width: 100px;
+	height: 100px;
+} 
+
+.student_data div{
+  margin: 0.2rem!important;
+}
+
 
 .Error_container{
     justify-content: center;

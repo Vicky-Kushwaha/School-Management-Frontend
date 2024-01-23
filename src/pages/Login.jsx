@@ -84,28 +84,28 @@ const Login = () => {
         	  <div className="regis_img_container">
         	  <img src="images/login1.jpg" alt="registration image" width="250" /> 	
         	  </div>
-        	  <div className="regis_form" style={{padding: "1rem"}}>
+        	  <div className="regis_form">
         	  <form onSubmit={handleSubmit} >
-        	<div className="input_container">
-                <label htmlFor="email">Email:</label>
-        	<input type="text" name="email" id="email" autoComplete="off" onChange={onChange}/>
-        	</div>
-        	<div className="category" style={{padding: "0.8rem"}}>
+             <div className="category" style={{padding: "0.8rem"}}>
                 <label htmlFor="admin">Admin:</label>
                 <input type="radio" name="category" id="admin" value="admin" onChange={onChange}/>
                 <label htmlFor="teacher">Teacher:</label>
                 <input type="radio" name="category" id="teacher" value="teacher" onChange={onChange}/>
                 <label htmlFor="student">Student:</label>
                 <input type="radio" name="category" id="student" value="student" onChange={onChange}/>
-        	</div>
+            </div> 
+        	<div className="input_container">
+                <label htmlFor="email">Email:</label>
+        	<input type="text" name="email" id="email" autoComplete="off" onChange={onChange}/>
+        	</div>        	
         	<div className="input_container">
                 <label htmlFor="password">Password:</label>
         	<input type="password" name="password" id="password" onChange={onChange}/>
         	</div>
-        	<div>
+        	<div className="submit_container">
         	<input type="submit" value="Login"/>
         	</div> 
-             <p style={{paddingTop:"1rem",fontSize:"0.8rem"}}>Don't have account ? 
+             <p>Don't have account ? 
              <span onClick={()=> navigate("/register")} style={{color:"blue",cursor:"pointer"}} >  signUp</span></p>
         	</form>
         	  </div>

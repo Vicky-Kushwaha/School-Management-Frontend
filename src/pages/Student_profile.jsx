@@ -44,9 +44,12 @@ const Student_profile = () => {
              </div>
              <div>
          	   	  <p><span>Email:</span> {user.email}</p>
-         	   </div>
+         	   </div> 
+               <div>
+                    <p><span>Phone:</span> {user.phone}</p>
+               </div>
          	   <div>
-         	   	  <p><span>Fee:</span> {user.fee}</p>
+         	   	  <p><span>Dues:</span> {user.fee}</p>
                 </div>
              <div>
          	   	  <p><span>Attendance:</span> {user.present}/{user.present + user.absent}</p>

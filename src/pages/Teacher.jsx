@@ -199,36 +199,36 @@ const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/auth/teacher/
          	  </div>
          	  <div className="student_box">
                {Array.isArray(filterTeacher) && filterTeacher.length > 0 ? (
-                   filterTeacher.map((elem, id) => (
-                
-         	  	 <div className="student_info" key={id} >
-         	  	 	<table cellSpacing="0">
+                <table cellSpacing="0">
                   <thead>
-         	  	 		<tr className="table_heading">
-         	  	 			<th>Name</th>
-         	  	 			<th>Subject</th>
-         	  	 			<th>Subject code</th>
-         	  	 			<th>Email</th>
-         	  	 			<th>Phone</th>
-         	  	 		</tr>
+                        <tr className="table_heading">
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Subject code</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
                      </thead>
-                     <tbody>
+                 {  filterTeacher.map((elem, id) => (
+
+                     <tbody className="student_info" key={id}>
          	  	 		<tr className="table_data">
          	  	 			<td>{elem.name}</td>
          	  	 			<td>{elem.subject}</td>
          	  	 			<td>{elem.subjectcode}</td>
          	  	 			<td>{elem.email}</td>
          	  	 			<td>{elem.phone}</td>
-         	  	 		</tr> 
-                     </tbody>      	  	 		
-         	  	 	</table>
-                     <div className="action">
+                     <td className="action">
                         <div><VisibilityIcon onClick={()=> teacModal(elem)} /></div>
                         <div><EditIcon onClick={() => editShow(elem)} /></div>
                         <div><DeleteIcon onClick={() => del(elem)}/></div>
-                     </div> 
-         	  	 </div>  
-                 ))
+                     </td>                             
+         	  	 		</tr> 
+                     </tbody>      	  	 		
+         	  	 	
+                 )) }
+                  </table> 
                        ) : (
                                <p style={{textAlign:"center"}}>No teachers available</p>
                              )}

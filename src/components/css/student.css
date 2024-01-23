@@ -21,7 +21,7 @@
 
 .student_box{
 	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
-	width: 75vw;
+	width: 85vw;
 	height: 60vh;
 	border-radius: 10px;
 	margin: 0 auto;
@@ -34,16 +34,15 @@
 }
 
 .student_info{
-	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
-	border-radius: 10px;
-	width: 70vw;
-	margin: 1rem auto;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 1.0);
+	width: 100%;
 }
 
-.student_info table{
+.student_box table{
 	width: 100%;
 	text-align: center;
 }
+
 
 td,th{
 	padding: 0.5rem;
@@ -59,9 +58,10 @@ th:nth-child(1){
 	border-top-left-radius: 10px;
 }
 
-th:nth-child(5){
+th:nth-child(6){
 	border-top-right-radius: 10px;
 }
+
 
 .add_student{
 	width: 15rem;
@@ -148,19 +148,14 @@ th:nth-child(5){
 .action{
 	display: flex;
 	justify-content: space-around;
-    padding: 0.3rem;
-	border-radius: 0 0 10px 10px ;
 }
 
 .action div{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
-	width: 2rem;
-	height: 2rem;
-	border-radius: 50%;
 	cursor: pointer;
+	padding: 0.2rem;
 
 }
 
