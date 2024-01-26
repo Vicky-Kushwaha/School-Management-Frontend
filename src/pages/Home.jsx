@@ -38,7 +38,7 @@ const Home = () => {
         	 </div>
         	 <div className="home_about">
         	 	<h3>welcome to <br/>school management system</h3>
-        	 	<p><span>School Management System </span>is all in one<br/>  solution for educational institutes with different type of users.</p>
+        	 	<p><span>School Management System </span>is all <br/> in one  solution for educational institutes with different type of users.</p>
         	 	<p>Register here to use this app.</p>
         	 <div className="btn_container">
         	 	<Link to="/register"><button>Register</button></Link>
