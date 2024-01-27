@@ -85,6 +85,12 @@ const onChange = (e) => {
               <KeyboardDoubleArrowLeftIcon onClick={hideSidebar}/>
            </div> 
 
+        { (user.category === "student") && 
+           <div className="sidebar_link">
+              <Link className="link" to="/student_profile" onClick={hideSidebar} >Profile</Link>
+           </div>
+         }    
+
          { (user.category === "teacher") && 
            <div className="sidebar_link">
               <Link className="link" to="/teacher_profile" onClick={hideSidebar} >Profile</Link>
