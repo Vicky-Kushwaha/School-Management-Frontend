@@ -80,7 +80,7 @@ const Teacher = () => {
      const name = e.target.value
      if(name.length > 0){
     const newTeacher = teac.filter((elem)=>{
-        return (elem.name == name) 
+        return (elem.name === name) 
     });
 
    if(newTeacher.length > 0){

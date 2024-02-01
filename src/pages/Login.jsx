@@ -86,7 +86,7 @@ const Login = () => {
         	  </div>
         	  <div className="regis_form">
         	  <form onSubmit={handleSubmit} >
-             <div className="category" style={{padding: "0.8rem"}}>
+             <div className="category" style={{padding: "0.3rem"}}>
                 <label htmlFor="admin">Admin:</label>
                 <input type="radio" name="category" id="admin" value="admin" onChange={onChange}/>
                 <label htmlFor="teacher">Teacher:</label>
