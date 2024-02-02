@@ -52,6 +52,14 @@
 	 padding-top: 0.2rem!important;
 	}
 
+.category input{
+	margin: 0.5px!important;
+}
+
+.category label{
+	margin: 5px!important;
+}
+
 .total_info{
   width: 18rem!important;
   padding: 0.3rem!important;

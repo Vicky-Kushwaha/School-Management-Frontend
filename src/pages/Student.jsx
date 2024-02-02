@@ -84,7 +84,7 @@ useEffect(()=>{
      const classname = e.target.value
      if(classname > 0){
     const newStudent = stud.filter((elem)=>{
-        return (elem.classname === classname) 
+        return (elem.classname == classname) 
     });
 
    if(newStudent.length > 0){
